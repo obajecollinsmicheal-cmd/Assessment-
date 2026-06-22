@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Token Launch Countdown</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <div class="hero-panel">
+      <div>
+        <span class="eyebrow">Token Launch</span>
+        <h1>Countdown to the next big release</h1>
+        <p>Choose your launch date, watch the timer, and see progress build up in real time.</p>
+      </div>
+      <div class="hero-badge">Live</div>
+    </div>
+
+    <section class="card panel">
+      <div class="panel-title">
+        <h2>Launch settings</h2>
+        <p>Pick a target date and start the countdown.</p>
+      </div>
+      <label for="target">Target date &amp; time</label>
+      <input id="target" type="datetime-local">
+      <div class="button-row">
+        <button id="setBtn">Set Target</button>
+        <button id="nowBtn" class="ghost">Quick test</button>
+      </div>
+    </section>
+
+    <section class="card countdown-panel">
+      <div class="time-grid">
+        <div class="time-item"><span id="days" class="time-number">0</span><span class="time-label">Days</span></div>
+        <div class="time-item"><span id="hours" class="time-number">00</span><span class="time-label">Hours</span></div>
+        <div class="time-item"><span id="minutes" class="time-number">00</span><span class="time-label">Minutes</span></div>
+        <div class="time-item"><span id="seconds" class="time-number">00</span><span class="time-label">Seconds</span></div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-bg"><div id="progressBar" class="progress-fill"></div></div>
+        <div id="progressLabel" class="progress-text">Progress: 0%</div>
+      </div>
+      <div id="status" class="status-text">Ready to launch</div>
+    </section>
+
+    <section class="card subscribe-panel">
+      <h2>Subscribe for updates</h2>
+      <p>Enter your email and we will notify you when the token launches.</p>
+      <form id="subscribeForm" class="subscribe-form">
+        <input id="email" type="email" placeholder="your@email.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+
+    <footer class="footer-note">Demo only — subscription is simulated and logs to the console.</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

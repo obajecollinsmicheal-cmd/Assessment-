@@ -96,8 +96,17 @@ subscribeForm.addEventListener('submit', (e)=>{
   alert('Thanks — subscription simulated (check console).')
 })
 
-setBtn.addEventListener('click', setTargetFromInput)
-nowBtn.addEventListener('click', setTargetNowPlusOne)
+if (setBtn && typeof setBtn.addEventListener === 'function') {
+  setBtn.addEventListener('click', setTargetFromInput)
+} else {
+  console.warn('setBtn is not available or addEventListener is unsupported', setBtn)
+}
+
+if (nowBtn && typeof nowBtn.addEventListener === 'function') {
+  nowBtn.addEventListener('click', setTargetNowPlusOne)
+} else {
+  console.warn('nowBtn is not available or addEventListener is unsupported', nowBtn)
+}
 
 // initialize with a default future date (7 days from now)
 (function initDefault(){

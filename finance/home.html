@@ -4,21 +4,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simple Transaction Tracker</title>
+  <title>Smart Finance Tracker</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <div class="app">
-    <h1>Simple Transaction Tracker</h1>
-    <p class="intro">Enter a transaction amount, choose Credit or Debit, then add it.</p>
+  <div class="page-shell">
+    <header class="hero-card">
+      <div>
+        <span class="eyebrow">Finance Dashboard</span>
+        <h1>Track every credit and debit instantly</h1>
+        <p>Log transactions, view your balance, and filter activity with a clean summary panel.</p>
+      </div>
+      <div class="hero-pill">Budget made bright</div>
+    </header>
 
-    <div class="card">
+    <section class="card input-card">
+      <div class="card-heading">
+        <h2>Add a transaction</h2>
+        <p>Quickly record credits or debits with a single tap.</p>
+      </div>
       <label>
         Amount
         <input id="amount" type="number" min="0.01" step="0.01" placeholder="0.00" />
       </label>
-
       <label>
         Type
         <select id="type">
@@ -26,27 +35,33 @@
           <option value="Debit">Debit</option>
         </select>
       </label>
-
       <button id="addBtn">Add Transaction</button>
-    </div>
+    </section>
 
-    <div class="card">
-      <div class="balance-row">
-        <span>Net Balance:</span>
-        <strong id="balance">$0.00</strong>
+    <section class="card overview-card">
+      <div class="overview-grid">
+        <div class="overview-item">
+          <span>Net Balance</span>
+          <strong id="balance">$0.00</strong>
+        </div>
+        <div class="overview-item accent">
+          <span>Filter results</span>
+          <div class="filter-row">
+            <button id="allBtn" class="active">All</button>
+            <button id="creditBtn">Credit</button>
+            <button id="debitBtn">Debit</button>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="filter-row">
-        <button id="allBtn" class="active">All</button>
-        <button id="creditBtn">Credit</button>
-        <button id="debitBtn">Debit</button>
+    <section class="card transaction-card">
+      <div class="card-heading">
+        <h2>Transaction history</h2>
+        <p>Recent activity appears here as you add transactions.</p>
       </div>
-    </div>
-
-    <div class="card">
-      <h2>Transaction List</h2>
       <ul id="transactionList" class="transaction-list"></ul>
-    </div>
+    </section>
   </div>
 
   <script src="home.js"></script>
