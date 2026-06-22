@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Transaction Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="app">
+    <h1>Simple Transaction Tracker</h1>
+    <p class="intro">Enter a transaction amount, choose Credit or Debit, then add it.</p>
+
+    <div class="card">
+      <label>
+        Amount
+        <input id="amount" type="number" min="0.01" step="0.01" placeholder="0.00" />
+      </label>
+
+      <label>
+        Type
+        <select id="type">
+          <option value="Credit">Credit</option>
+          <option value="Debit">Debit</option>
+        </select>
+      </label>
+
+      <button id="addBtn">Add Transaction</button>
+    </div>
+
+    <div class="card">
+      <div class="balance-row">
+        <span>Net Balance:</span>
+        <strong id="balance">$0.00</strong>
+      </div>
+
+      <div class="filter-row">
+        <button id="allBtn" class="active">All</button>
+        <button id="creditBtn">Credit</button>
+        <button id="debitBtn">Debit</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Transaction List</h2>
+      <ul id="transactionList" class="transaction-list"></ul>
+    </div>
+  </div>
+
+  <script src="home.js"></script>
+</body>
+
+</html>
